@@ -1,0 +1,23 @@
+@startuml
+
+abstract class Duck{
+    display()
+    fly()
+}
+class MallardDuck{
+    display()
+}
+class RedheadDuck{
+    display()
+}
+class RubberDuck{
+    display()
+    fly()
+}
+
+Duck <|-- MallardDuck
+Duck <|-- RedheadDuck
+Duck <|-- RubberDuck
+
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+
+abstract class Duck{
+    display()
+}
+interface Flyable{
+    fly()
+}
+class MallardDuck{
+    fly()
+    display()
+}
+class RedheadDuck{
+    fly()
+    display()
+}
+class RubberDuck{
+    display()
+}
+class DecoyDuck{
+    display()
+}
+
+Duck <|-- MallardDuck
+Duck <|-- RedheadDuck
+Duck <|-- RubberDuck
+Duck <|-- DecoyDuck
+
+Flyable <|.. MallardDuck
+Flyable <|.. RedheadDuck
+
+@enduml
