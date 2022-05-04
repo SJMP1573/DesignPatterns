@@ -1,0 +1,61 @@
+@startuml
+
+ class Observable{
+     boolean changed = false;
+     Vector<Observer> obs;
+
+     addObserver()
+     deleteObserver()
+     notifyObservers()
+     setChanged()
+ }
+
+ class WeChatPublicAccount{
+
+     String title;
+     String author;
+     String content;
+
+     getTitle()
+     getAuthor()
+     getContent()
+     notifyObservers()
+ }
+
+ Observable <|-- WeChatPublicAccount
+
+ interface Observer{
+    update()
+ }
+
+ class User1{
+     String title;
+     String author;
+     String content;
+    update()
+ }
+
+ class User2{
+      String title;
+      String author;
+      String content;
+     update()
+ }
+
+class User3{
+     String title;
+     String author;
+     String content;
+  update()
+}
+
+Observer <|.. User1
+Observer <|.. User2
+Observer <|.. User3
+Observable --> Observer
+
+User1 --> Observable
+User2 --> Observable
+User3 --> Observable
+
+@enduml

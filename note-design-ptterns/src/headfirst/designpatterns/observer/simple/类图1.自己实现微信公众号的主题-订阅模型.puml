@@ -1,0 +1,60 @@
+@startuml
+
+ interface Subject{
+    registerObserver()
+    removeObserver()
+    notifyAllObservers()
+ }
+
+ class WeChatPublicAccount{
+
+
+     ArrayList observersList;
+          String title;
+          String author;
+          String content;
+
+     registerObserver()
+     removeObserver()
+     notifyAllObservers()
+     getObserversList()
+
+ }
+
+ Subject <|-- WeChatPublicAccount
+
+ interface Observer{
+    update()
+ }
+
+ class User1{
+     String title;
+     String author;
+     String content;
+    update()
+ }
+
+ class User2{
+      String title;
+      String author;
+      String content;
+     update()
+ }
+
+class User3{
+     String title;
+     String author;
+     String content;
+  update()
+}
+
+Observer <|.. User1
+Observer <|.. User2
+Observer <|.. User3
+Subject --> Observer
+
+User1 --> Subject
+User2 --> Subject
+User3 --> Subject
+
+@enduml
