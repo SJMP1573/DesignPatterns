@@ -1,0 +1,38 @@
+@startuml
+abstract class Component{
+    method()
+}
+
+class ComponentA{
+    method()
+}
+class ComponentB{
+   method()
+}
+
+
+abstract class Decorator{
+    method()
+}
+
+class DecoratorA{
+    Component wrappedObj
+    method()
+}
+class DecoratorB{
+    Component wrappedObj
+    method()
+}
+
+Component <|-- ComponentA
+Component <|-- ComponentB
+
+
+Component <|-- Decorator
+
+Decorator <|-- DecoratorA
+Decorator <|-- DecoratorB
+
+Decorator --> Component
+
+@enduml

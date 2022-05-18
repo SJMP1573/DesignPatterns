@@ -1,0 +1,60 @@
+@startuml
+    abstract class Beverage{
+    String description
+    getDescription()
+    cost()
+}
+
+class HouseBlend{
+    cost()
+}
+class DarkRoast{
+   cost()
+}
+class Espresso{
+  cost()
+}
+class Decaf{
+   cost()
+}
+
+abstract class CondimentDecorator{
+    getDescription()
+}
+
+class Milk{
+    Beverage beverage
+    getDescription()
+    cost()
+}
+class Mocha{
+    Beverage beverage
+    getDescription()
+    cost()
+}
+class Soy{
+    Beverage beverage
+    getDescription()
+    cost()
+}
+class Whip{
+    Beverage beverage
+    getDescription()
+    cost()
+}
+
+Beverage <|-- HouseBlend
+Beverage <|-- DarkRoast
+Beverage <|-- Espresso
+Beverage <|-- Decaf
+
+Beverage <|-- CondimentDecorator
+
+CondimentDecorator <|-- Milk
+CondimentDecorator <|-- Mocha
+CondimentDecorator <|-- Soy
+CondimentDecorator <|-- Whip
+
+CondimentDecorator --> Beverage
+
+@enduml
