@@ -1,0 +1,32 @@
+@startuml
+
+class PizzaStore{
+    orderPizza()
+}
+
+class SimplePizzaFactory{
+    createPizza()
+}
+
+PizzaStore --> SimplePizzaFactory
+
+abstract class Pizza{
+    prepare()
+    bake()
+    cut()
+    box()
+}
+
+SimplePizzaFactory --> Pizza
+
+class CheesePizza
+class VeggiePizza
+class ClamPizza
+class PepperoniPizza
+
+Pizza <|-- CheesePizza
+Pizza <|-- VeggiePizza
+Pizza <|-- ClamPizza
+Pizza <|-- PepperoniPizza
+
+@enduml

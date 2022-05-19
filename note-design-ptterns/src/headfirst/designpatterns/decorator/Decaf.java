@@ -1,4 +1,4 @@
-package headfirst.designpatterns.Decorator;
+package headfirst.designpatterns.decorator;
 
 /**
  * @author: sjmp1573

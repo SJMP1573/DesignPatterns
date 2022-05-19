@@ -1,0 +1,33 @@
+@startuml
+
+abstract class PizzaStore{
+    createPizza()
+    orderPizza()
+}
+
+class ChicagoPizzaStore{
+    createPizza()
+}
+
+class NYPizzaStore{
+    createPizza()
+}
+
+PizzaStore <|-- ChicagoPizzaStore
+PizzaStore <|-- NYPizzaStore
+
+Pizza <|-- ChicagoStyleCheesePizza
+Pizza <|-- NYStyleCheesePizza
+
+
+class ChicagoStyleCheesePizza
+
+ChicagoPizzaStore --> ChicagoStyleCheesePizza
+
+class NYStyleCheesePizza
+NYPizzaStore --> NYStyleCheesePizza
+
+abstract class Pizza
+
+
+@enduml
