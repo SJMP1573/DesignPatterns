@@ -1,0 +1,49 @@
+@startuml
+
+interface State{
+	  insertQuarter();
+	  ejectQuarter();
+	  turnCrank();
+	  dispense();
+	  refill();
+}
+
+class SoldOutState{
+	  insertQuarter();
+	  ejectQuarter();
+	  turnCrank();
+	  dispense();
+	  refill();
+}
+
+ class SoldState{
+    	  insertQuarter();
+    	  ejectQuarter();
+    	  turnCrank();
+    	  dispense();
+    	  refill();
+ }
+
+class HasQuarterState{
+	  insertQuarter();
+	  ejectQuarter();
+	  turnCrank();
+	  dispense();
+	  refill();
+}
+
+class NoQuarterState{
+	  insertQuarter();
+	  ejectQuarter();
+	  turnCrank();
+	  dispense();
+	  refill();
+}
+
+State <|.. SoldOutState
+State <|.. SoldState
+State <|.. HasQuarterState
+State <|.. NoQuarterState
+
+
+@enduml
